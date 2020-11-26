@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"
+    />
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"
+    ></script>
+    <link rel="stylesheet" href="css/styles.css">
+
+    <title>Virtual Tour</title>
+  </head>
+  <body>
+
+
+
+    <div id="panorama"></div>
+    <script>
+
+      pannellum.viewer("panorama",{
+
+        default:{
+            firstScene:"escena1",
+            author: " Travelers Minds",
+            sceneFaceDuration:2000,
+            autoRotate: -3,
+            autoRotateInactivityDelay: 1700,
+            autoLoad: true,
+            
+
+        },
+
+        scenes:{
+            escena1:{
+                title:"Plaza Domingo Gadea 'Esteli'",
+                hfov:110,
+                pitch:-5,
+                yaw:10,
+                type: "equirectangular",
+                panorama:"./img/plaza/Output 1.JPG",
+                hotSpots:[
+                
+                {
+                    pitch: -2.4,
+                    yaw: 14,
+                    type: "scene",
+                    text: "Entrada Principal Noroeste",
+                    sceneId: "Plaza2"
+                }
+            ]
+                
+        },
+        Plaza2: {
+            title: "Plaza Domingo Gadea 'Esteli'",
+            hfov:150,
+            yaw: -30,
+            pitch:-5,
+            type: "equirectangular",
+            panorama: "/img/plaza/Output 2.JPG",
+            hotSpots: [
+                {
+                    pitch: 0,
+                    yaw: 110,
+                    type: "scene",
+                    text: "Entrada NorOeste",
+                    sceneId: "escena1",
+                    targetYaw: -23,
+                    targetPitch: 2
+                },
+                {
+                  "pitch": 3,
+                  "yaw": 75,
+                  "type": "scene",
+                  "text": "Museo departamental Esteli.",
+                  sceneId: "Museo"
+              },
+              {
+                "pitch": -3,
+                "yaw": -90,
+                "type": "scene",
+                "text": "Patrimonio Cultural 'El Zorro'.",
+                sceneId: "Plaza3"
+            },
+            ]
+        },
+        Plaza3: {
+          title: "Plaza Domingo Gadea 'Esteli'",
+          hfov:150,
+          yaw: -30,
+          pitch:-5,
+          type: "equirectangular",
+          panorama: "/img/plaza/Output 3.JPG",
+          hotSpots: [
+              {
+                  pitch: -6,
+                  yaw: -80,
+                  type: "scene",
+                  text: "Entrada Suroeste",            
+                  targetYaw: -23,
+                  targetPitch: 2,
+                  sceneId: "Plaza4"
+              },
+              {
+                "pitch": -8,
+                "yaw": 170,
+                "type": "scene",
+                "text": "Centro de Plaza Domingo Gadea",
+                sceneId: "Plaza2"
+            },
+            {
+              pitch: 18,
+              yaw: -2,
+              type: "info",
+              text: "Monumento Franciscio rivera el Zorro",            
+              targetYaw: -23,
+              targetPitch: 2,
+             
+          }
+          ]
+      },
+      Plaza4:{
+                title:"Plaza Domingo Gadea 'Esteli'",
+                hfov:110,
+                pitch:-5,
+                yaw:10,
+                type: "equirectangular",
+                panorama:"./img/plaza/Output 4.JPG",
+                hotSpots:[
+                
+                {
+                    pitch: -2.4,
+                    yaw: 0,
+                    type: "scene",
+                    text: "Entrada Principal Noroeste",
+                    sceneId: "Plaza2"
+                }
+            ]
+                
+        },
+        Museo:{
+          title:"Museo Departamental Esteli",
+          hfov:150,
+          pitch:-10,
+          yaw:10,
+          type: "equirectangular",
+          panorama:"./img/plaza/Output 6.JPG",
+          hotSpots:[
+          
+          {
+              pitch: 0,
+              yaw: 60,
+              type: "scene",
+              text: "Salida a Plaza",
+              sceneId: "Plaza2"
+          },
+          {
+            pitch: -8,
+            yaw: -98,
+            type: "scene",
+            text: "Primer Sala Museo 'Nombre'",
+            sceneId: "Museo2"
+        }
+      ]
+          
+  },
+      Museo2:{
+        title:"Museo Departamental Esteli",
+        hfov:150,
+        pitch:-10,
+        yaw:10,
+        type: "equirectangular",
+        panorama:"./img/plaza/Output 7.JPG",
+        hotSpots:[
+        
+        {
+            pitch: 4,
+            yaw: -28,
+            type: "scene",
+            text: "Estancia",
+            sceneId: "Museo"
+        },
+        {
+          pitch: 0,
+          yaw: 155,
+          type: "scene",
+          text: "Segunda Sala Museo 'Nombre'",
+          sceneId: "Museo3"
+      },
+        {
+          pitch: -4,
+          yaw: -110,
+          type: "info",
+          text: "Disfras antiguo de Shaman",          
+        },
+        {
+          pitch: -8,
+          yaw: -30,
+          type: "info",
+          text: "Piedra del Shaman",
+          
+      }
+    ]
+        
+    },
+    Museo3:{
+      title:"Museo Departamental Esteli",
+      hfov:150,
+      pitch:-10,
+      yaw:10,
+      type: "equirectangular",
+      panorama:"./img/plaza/Output 8.JPG",
+      hotSpots:[
+      
+      {
+          pitch: 4,
+          yaw: 65,
+          type: "scene",
+          text: "Tercera Sala del Museo 'Nombre'",
+          sceneId: "Museo4"
+      },
+      {
+        pitch: 0,
+        yaw: 210,
+        type: "scene",
+        text: "Segunda Sala Museo 'Nombre'",
+        sceneId: "Museo4"
+    },
+      {
+        pitch: -4,
+        yaw: -90,
+        type: "info",
+        text: "La llorona ( Sindee :P)",          
+      },
+      {
+        pitch: -30,
+        yaw: -20,
+        type: "info",
+        text: "Mascara de Baile Tipica",
+        
+    }
+  ]
+      
+  },
+  Museo4:{
+    title:"Museo Departamental Esteli",
+    hfov:150,
+    pitch:-10,
+    yaw:10,
+    type: "equirectangular",
+    panorama:"./img/plaza/Output 9.JPG",
+    hotSpots:[
+    
+    {
+        pitch: 4,
+        yaw: 65,
+        type: "scene",
+        text: "Cuarta Sala Museo",
+        sceneId: "Museo5"
+    },
+    {
+      pitch: 0,
+      yaw: 210,
+      type: "info",
+      text: "Esteli de Hace unas decadas",
+      
+  },
+    {
+      pitch: -4,
+      yaw: -90,
+      type: "scene",
+      text: "Segunda Sala Museo 'Nombre'",
+      sceneId: "Museo3"          
+    },
+    {
+      pitch: -30,
+      yaw: -20,
+      type: "info",
+      text: "Elegir elemento y poner info..",
+      
+  }
+]
+    
+},
+Museo5:{
+  title:"Museo Departamental Esteli",
+  hfov:150,
+  pitch:-10,
+  yaw:10,
+  type: "equirectangular",
+  panorama:"./img/plaza/Output 10.JPG",
+  hotSpots:[
+  
+  {
+      pitch: 4,
+      yaw: -33,
+      type: "scene",
+      text: "Tercera Sala Museo",
+      sceneId: "Museo5"
+  },
+  {
+    pitch: 0,
+    yaw: 210,
+    type: "info",
+    text: "Esteli Heroes y Martires",
+    
+},
+  {
+    pitch: -4,
+    yaw: -165,
+    type: "scene",
+    text: "Estancia de Museo",
+    sceneId: "Museo"          
+  },
+  {
+    pitch: 20,
+    yaw: -75,
+    type: "info",
+    text: "Inauracion de Esteli",
+    
+}
+]
+  
+},
+
+
+
+        }
+      });
+
+	      //history.pushState(null, "", "VirtualTourExplora");
+
+    </script>
+
+
+
+    
+    
+  </body>
+</html>
